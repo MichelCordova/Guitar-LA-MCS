@@ -1,13 +1,6 @@
 import React from 'react'
-import { useMemo } from 'react'
 
-const Header = ({cart, removeFromCart, increaseQuantity, decreaseQuantity, clearCart}) => { 
-
-
-    // State Derivado
-
-    const isEmpy = useMemo(() => cart.length === 0, [cart]) 
-    const cartTotal = useMemo(() => cart.reduce( (total, item) => total + (item.quantity * item.price), 0), [cart])
+const Header = ({cart, removeFromCart, increaseQuantity, decreaseQuantity, clearCart, isEmpy, cartTotal}) => { 
 
   return (
     <header className="py-5 header">
